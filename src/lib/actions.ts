@@ -16,6 +16,7 @@ export async function createTaskAction(formData: FormData) {
     }
     createTask({ title, description, due_date, topic, status });
     revalidatePath('/tasks');
+    revalidatePath('/');
     return { success: true };
 }
 export async function updateTaskAction(id: number, formData: FormData) {
@@ -29,11 +30,13 @@ export async function updateTaskAction(id: number, formData: FormData) {
     }
     updateTask(id, { title, description, due_date, topic, status });
     revalidatePath('/tasks');
+    revalidatePath('/');
     return { success: true };
 }
 export async function archiveTaskAction(id: number) {
     archiveTask(id);
     revalidatePath('/tasks');
+    revalidatePath('/');
     revalidatePath('/archived');
     return { success: true };
 }
