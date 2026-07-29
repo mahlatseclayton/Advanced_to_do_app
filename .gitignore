@@ -1,6 +1,24 @@
+# Dependencies (DO NOT PUSH - thousands of files)
+node_modules/
 
+# Next.js build output (DO NOT PUSH - compiled files)
+.next/
+out/
+build/
+
+# Local SQLite Database
+*.db
+*.db-journal
+
+# Environment variables
 .env
+.env*.local
+
+# Agent configuration, learning resources & local data
 .agents/
 .gemini/
 resources/
 
+# OS metadata
+.DS_Store
+Thumbs.db
