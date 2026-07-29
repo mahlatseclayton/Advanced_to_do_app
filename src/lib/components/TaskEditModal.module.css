@@ -1,0 +1,180 @@
+/* Modal Backdrop Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+/* Modal Dialog Box */
+.dialog {
+  width: 100%;
+  max-width: 32rem;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  border: 1px solid #e4e4e7;
+  padding: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .dialog {
+    background-color: #18181b;
+    border-color: #27272a;
+  }
+}
+
+/* Modal Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #18181b;
+  margin: 0;
+}
+
+.btnClose {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #71717a;
+  cursor: pointer;
+}
+
+.btnClose:hover {
+  color: #27272a;
+}
+
+@media (prefers-color-scheme: dark) {
+  .title {
+    color: #f4f4f5;
+  }
+  .btnClose {
+    color: #a1a1aa;
+  }
+  .btnClose:hover {
+    color: #f4f4f5;
+  }
+}
+
+/* Form Layout */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gridTwo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #52525b;
+  margin-bottom: 0.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .label {
+    color: #a1a1aa;
+  }
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d4d4d8;
+  background-color: transparent;
+  color: #18181b;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.select {
+  background-color: #fafafa;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .input, .select, .textarea {
+    border-color: #3f3f46;
+    color: #f4f4f5;
+  }
+  .select {
+    background-color: #27272a;
+  }
+}
+
+/* Footer Buttons */
+.footerActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.btnCancel {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d4d4d8;
+  background: transparent;
+  color: #27272a;
+  cursor: pointer;
+}
+
+.btnCancel:hover {
+  background-color: #f4f4f5;
+}
+
+.btnSave {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btnSave:hover {
+  background-color: #1d4ed8;
+}
+
+@media (prefers-color-scheme: dark) {
+  .btnCancel {
+    border-color: #3f3f46;
+    color: #e4e4e7;
+  }
+  .btnCancel:hover {
+    background-color: #27272a;
+  }
+}
