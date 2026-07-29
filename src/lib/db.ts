@@ -11,7 +11,7 @@ db.exec(
     title TEXT NOT NULL,
     due_date TEXT NOT NULL,
     topic TEXT NOT NULL,
-    status TEXT CHECK(status IN ('To-Do','In-Progress','Completed')) NOT NULL DEFAULT 'to-do',
+    status TEXT CHECK(status IN ('To-Do','In-Progress','Complete')) NOT NULL DEFAULT 'to-do',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     is_Archived BOOLEAN NOT NULL DEFAULT 0
     )
