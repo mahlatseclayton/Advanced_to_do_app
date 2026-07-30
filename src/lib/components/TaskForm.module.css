@@ -1,10 +1,10 @@
-/* Dark Sleek Form Card */
+/* Light White Component Form Card */
 .formCard {
-  background-color: #1e293b;
-  border: 1px solid #334155;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 0.875rem;
   padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -13,7 +13,7 @@
 .heading {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #f8fafc;
+  color: #0f172a;
   margin: 0;
 }
 
@@ -38,7 +38,7 @@
   display: block;
   font-size: 0.8125rem;
   font-weight: 600;
-  color: #cbd5e1;
+  color: #334155;
   margin-bottom: 0.375rem;
 }
 
@@ -47,17 +47,17 @@
   padding: 0.625rem 0.875rem;
   font-size: 0.875rem;
   border-radius: 0.5rem;
-  border: 1px solid #334155;
-  background-color: #0f172a;
-  color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  background-color: #f8fafc;
+  color: #0f172a;
   outline: none;
   box-sizing: border-box;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .input:focus, .select:focus, .textarea:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 .actions {
@@ -74,11 +74,10 @@
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
-  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
 }
 
 .btnSubmit:hover {
   background-color: #1d4ed8;
-  transform: translateY(-1px);
 }

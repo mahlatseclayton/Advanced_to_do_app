@@ -43,7 +43,7 @@ export default async function HomePage({ searchParams }: PageProps) {
         {/* Empty state if no tasks exist */}
         {tasks.length === 0 ? (
           <div className={styles.emptyState}>
-            <p className={styles.emptyText}>No active tasks found. Create one above!</p>
+            <p className={styles.emptyText}>No active tasks found. Create one above.</p>
           </div>
         ) : (
           /* Render grid of task cards */

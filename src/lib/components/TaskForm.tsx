@@ -76,7 +76,7 @@ export default function TaskForm() {
 
       <div className={styles.actions}>
         <button type="submit" disabled={isSubmitting} className={styles.btnSubmit}>
-          {isSubmitting ? 'Adding Task...' : '+ Add Task'}
+          {isSubmitting ? 'Adding Task...' : 'Add Task'}
         </button>
       </div>
     </form>

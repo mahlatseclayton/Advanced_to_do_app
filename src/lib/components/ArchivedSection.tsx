@@ -15,7 +15,7 @@ export default function ArchivedSection({ archivedTasks }: ArchivedSectionProps)
   return (
     <div className={styles.container}>
       <button onClick={() => setIsOpen(true)} className={styles.btnArchived}>
-        📦 View Archived Tasks ({archivedTasks.length})
+        View Archived Tasks ({archivedTasks.length})
       </button>
 
       {isOpen && (

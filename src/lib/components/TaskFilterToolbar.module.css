@@ -2,26 +2,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1e293b;
-  border: 1px solid #334155;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
   padding: 1rem 1.25rem;
   border-radius: 0.875rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .label {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #94a3b8;
+  color: #334155;
 }
 
 .select {
   padding: 0.5rem 0.875rem;
   font-size: 0.875rem;
   border-radius: 0.5rem;
-  border: 1px solid #334155;
-  background-color: #0f172a;
-  color: #60a5fa;
+  border: 1px solid #cbd5e1;
+  background-color: #f8fafc;
+  color: #2563eb;
   font-weight: 600;
   outline: none;
   cursor: pointer;
@@ -29,5 +29,5 @@
 }
 
 .select:focus {
-  border-color: #3b82f6;
+  border-color: #2563eb;
 }

@@ -1,19 +1,19 @@
-/* Task Card Container - Matching Form UI */
+/* Light White Component Task Card */
 .cardContainer {
   padding: 1.25rem;
   border-radius: 0.875rem;
-  border: 1px solid #334155;
-  background-color: #1e293b;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   gap: 0.875rem;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .cardContainer:hover {
   transform: translateY(-2px);
-  border-color: #475569;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .archiving {
@@ -31,15 +31,15 @@
 .title {
   font-weight: 700;
   font-size: 1.125rem;
-  color: #f8fafc;
+  color: #0f172a;
   margin: 0;
   line-height: 1.4;
 }
 
-/* Unified Status Badges with Subtle Tints */
+/* Status Badge Colors (Green, Orange, Blue) */
 .badge {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 0.25rem 0.625rem;
   border-radius: 9999px;
   text-transform: uppercase;
@@ -47,28 +47,31 @@
   white-space: nowrap;
 }
 
+/* Green Status: Complete */
 .statusComplete {
-  background-color: rgba(16, 185, 129, 0.12);
-  color: #34d399;
-  border: 1px solid rgba(52, 211, 153, 0.25);
+  background-color: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
 }
 
+/* Orange Status: In-Progress */
 .statusInProgress {
-  background-color: rgba(245, 158, 11, 0.12);
-  color: #fbbf24;
-  border: 1px solid rgba(251, 191, 36, 0.25);
+  background-color: #ffedd5;
+  color: #c2410c;
+  border: 1px solid #fdba74;
 }
 
+/* Blue Status: Todo */
 .statusTodo {
-  background-color: rgba(59, 130, 246, 0.12);
-  color: #60a5fa;
-  border: 1px solid rgba(96, 165, 250, 0.25);
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid #93c5fd;
 }
 
 /* Description Text */
 .description {
   font-size: 0.875rem;
-  color: #94a3b8;
+  color: #475569;
   margin: 0;
   line-height: 1.5;
 }
@@ -78,9 +81,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid #334155;
+  border-top: 1px solid #f1f5f9;
   padding-top: 0.75rem;
-  color: #94a3b8;
+  color: #64748b;
   font-size: 0.8125rem;
 }
 
@@ -91,28 +94,23 @@
 }
 
 .topicTag {
-  background-color: #0f172a;
-  color: #93c5fd;
+  background-color: #f1f5f9;
+  color: #2563eb;
   font-weight: 600;
   padding: 0.125rem 0.5rem;
   border-radius: 0.375rem;
-  border: 1px solid #334155;
+  border: 1px solid #cbd5e1;
 }
 
+/* Red Status: Overdue */
 .overdueBadge {
-  background-color: rgba(239, 68, 68, 0.15);
-  color: #f87171;
-  border: 1px solid rgba(248, 113, 113, 0.3);
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
   padding: 0.15rem 0.5rem;
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 700;
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
 }
 
 /* Action Buttons */
@@ -126,11 +124,11 @@
 .btnEdit {
   padding: 0.375rem 0.875rem;
   border-radius: 0.5rem;
-  background-color: #334155;
-  color: #f8fafc;
+  background-color: #f8fafc;
+  color: #0f172a;
   font-size: 0.8125rem;
   font-weight: 600;
-  border: 1px solid #475569;
+  border: 1px solid #cbd5e1;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -144,18 +142,18 @@
 .btnArchive {
   padding: 0.375rem 0.875rem;
   border-radius: 0.5rem;
-  background-color: #334155;
-  color: #f87171;
+  background-color: #f8fafc;
+  color: #dc2626;
   font-size: 0.8125rem;
   font-weight: 600;
-  border: 1px solid #475569;
+  border: 1px solid #cbd5e1;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .btnArchive:hover {
-  background-color: #ef4444;
-  border-color: #ef4444;
+  background-color: #dc2626;
+  border-color: #dc2626;
   color: #ffffff;
 }
 

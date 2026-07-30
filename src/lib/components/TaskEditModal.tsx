@@ -33,7 +33,7 @@ export default function TaskEditModal({ task, onClose }: TaskEditModalProps) {
       <div className={styles.dialog}>
         <div className={styles.header}>
           <h2 className={styles.title}>Edit Task #{task.id}</h2>
-          <button onClick={onClose} className={styles.btnClose}>✕</button>
+          <button onClick={onClose} className={styles.btnClose}>X</button>
         </div>
 
         <form onSubmit={handleSubmit} className={styles.form}>

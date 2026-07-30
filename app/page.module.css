@@ -1,4 +1,4 @@
-/* Light Canvas Page Layout */
+/* Clean Light Page Layout */
 .mainContainer {
   max-width: 56rem;
   margin: 0 auto;
@@ -11,7 +11,7 @@
   color: #0f172a;
 }
 
-/* Header & Royal Blue Titles */
+/* Header Section */
 .header {
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
   line-height: 2.5rem;
   font-weight: 800;
   letter-spacing: -0.025em;
-  color: #1d4ed8;
+  color: #0f172a;
 }
 
 .subtitle {
@@ -42,7 +42,7 @@
 .sectionTitle {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1e40af;
+  color: #1e3a8a;
 }
 
 /* Empty State Card */
