@@ -1,7 +1,8 @@
-import { getTasks } from '@/src/lib/tasks';
+import { getTasks, getArchivedTasks } from '@/src/lib/tasks';
 import TaskForm from '@/src/lib/components/TaskForm';
 import TaskCard from '@/src/lib/components/TaskCard';
 import TaskFilterToolbar from '@/src/lib/components/TaskFilterToolbar';
+import ArchivedSection from '@/src/lib/components/ArchivedSection';
 import styles from './page.module.css';
 
 interface PageProps {
@@ -12,6 +13,7 @@ export default async function HomePage({ searchParams }: PageProps) {
   const params = await searchParams;
   const sortBy = params.sortBy || 'due_date';
   const tasks = getTasks(sortBy);
+  const archivedTasks = getArchivedTasks();
 
   return (
     <main className={styles.mainContainer}>
@@ -29,10 +31,13 @@ export default async function HomePage({ searchParams }: PageProps) {
       {/* Task Sorting Toolbar */}
       <TaskFilterToolbar />
 
-      {/* List of Tasks */}
+      {/* Archived Tasks Trigger Button */}
+      <ArchivedSection archivedTasks={archivedTasks} />
+
+      {/* List of Active Tasks */}
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>
-          Tasks ({tasks.length})
+          Active Tasks ({tasks.length})
         </h2>
 
         {/* Empty state if no tasks exist */}

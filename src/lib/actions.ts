@@ -1,5 +1,5 @@
 'use server';
-import { createTask, updateTask, archiveTask } from './tasks';
+import { createTask, updateTask, archiveTask, unarchiveTask } from './tasks';
 import { TaskStatus } from './types';
 import { revalidatePath } from 'next/cache';
 
@@ -25,7 +25,7 @@ export async function updateTaskAction(id: number, formData: FormData) {
     const title = formData.get('title') as string;
     const description = formData.get('description') as string;
     const due_date = formData.get('due_date') as string;
-    const status = (formData.get('status') as TaskStatus) || 'To-Do';
+    const status = (formData.get('status') as TaskStatus) || 'Todo';
     const topic = formData.get('topic') as string;
     if (!title || !description || !topic || !due_date) {
         throw new Error('All fields are required');
@@ -42,3 +42,11 @@ export async function archiveTaskAction(id: number) {
     revalidatePath('/archived');
     return { success: true };
 }
+
+export async function unarchiveTaskAction(id: number) {
+    unarchiveTask(id);
+    revalidatePath('/tasks');
+    revalidatePath('/');
+    revalidatePath('/archived');
+    return { success: true };
+}

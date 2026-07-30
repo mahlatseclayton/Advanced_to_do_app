@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btnArchived {
+  padding: 0.5rem 1rem;
+  background-color: #1e293b;
+  color: #94a3b8;
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnArchived:hover {
+  color: #f8fafc;
+  border-color: #2563eb;
+  background-color: #0f172a;
+}

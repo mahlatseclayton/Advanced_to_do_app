@@ -1,104 +1,72 @@
-/* Container & Page Layout */
+/* Light Canvas Page Layout */
 .mainContainer {
-    max-width: 56rem;
-    /* 896px */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2.5rem 1rem;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    background-color: #ffffff;
-    color: #000000;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
-
-
-/* Header Section */
+/* Header & Royal Blue Titles */
 .header {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .title {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    color: #0000df;
-}
-
-@media (prefers-color-scheme: dark) {
-    .title {
-        color: #0808ee;
-    }
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #1d4ed8;
 }
 
 .subtitle {
-    font-size: 0.875rem;
-    color: #04045f;
+  font-size: 0.95rem;
+  color: #475569;
+  font-weight: 500;
 }
 
-@media (prefers-color-scheme: dark) {
-    .subtitle {
-        color: #15154b;
-    }
-}
-
-/* Task List Section */
+/* Section Title */
 .section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .sectionTitle {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #5a5ab4;
-}
-
-@media (prefers-color-scheme: dark) {
-    .sectionTitle {
-        color: #9494d6;
-    }
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e40af;
 }
 
 /* Empty State Card */
 .emptyState {
-    text-align: center;
-    padding: 3rem 1rem;
-    border: 1px dashed #4141aa;
-    border-radius: 0.75rem;
-}
-
-@media (prefers-color-scheme: dark) {
-    .emptyState {
-        border-color: #27272a;
-    }
+  text-align: center;
+  padding: 3.5rem 1rem;
+  border: 2px dashed #cbd5e1;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
 }
 
 .emptyText {
-    color: #71717a;
+  color: #64748b;
+  font-weight: 500;
 }
 
-@media (prefers-color-scheme: dark) {
-    .emptyText {
-        color: #a1a1aa;
-    }
-}
-
-/* Grid Layout for Task Cards */
 .taskGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
 }
 
 @media (min-width: 768px) {
-    .taskGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .taskGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

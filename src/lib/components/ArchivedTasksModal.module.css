@@ -1,0 +1,138 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(15, 23, 42, 0.75);
+  padding: 1rem;
+  backdrop-filter: blur(6px);
+}
+
+.dialog {
+  width: 100%;
+  max-width: 32rem;
+  border-radius: 0.875rem;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  padding: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 80vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 0.75rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.btnClose {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.btnClose:hover {
+  color: #f8fafc;
+}
+
+.content {
+  overflow-y: auto;
+  padding-right: 0.25rem;
+  max-height: 50vh;
+}
+
+.emptyText {
+  color: #94a3b8;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.875rem;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.taskItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.taskInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.taskTitle {
+  font-weight: 600;
+  color: #f8fafc;
+  font-size: 0.9375rem;
+}
+
+.taskTopic {
+  font-size: 0.75rem;
+  color: #93c5fd;
+}
+
+.btnUnarchive {
+  padding: 0.375rem 0.75rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btnUnarchive:hover {
+  background-color: #1d4ed8;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #334155;
+  padding-top: 0.75rem;
+}
+
+.btnCloseBtn {
+  padding: 0.5rem 1rem;
+  background-color: #334155;
+  color: #f8fafc;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btnCloseBtn:hover {
+  background-color: #475569;
+}

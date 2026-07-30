@@ -66,3 +66,18 @@ export function updateTask(
 export function archiveTask(id: number) {
     return db.prepare(`UPDATE tasks SET is_archived = 1 WHERE id = ?`).run(id);
 }
+
+export function getArchivedTasks(): Task[] {
+    const sql = `SELECT * FROM tasks WHERE is_archived = 1 ORDER BY created_at DESC`;
+    const tasks = db.prepare(sql).all() as Task[];
+
+    return tasks.map(task => ({
+        ...task,
+        is_overdue: computeIsOverdue(task.due_date, task.status)
+    }));
+}
+
+export function unarchiveTask(id: number) {
+    return db.prepare(`UPDATE tasks SET is_archived = 0 WHERE id = ?`).run(id);
+}
+

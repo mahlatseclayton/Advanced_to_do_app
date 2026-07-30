@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# COMS3011A Lab 1: Todo App
 
-## Getting Started
+A local-first, single-user task management application built with Next.js App Router and SQLite (`better-sqlite3`).
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Project Description
+
+This project provides a task management interface designed for desktop usage. It features task creation, real-time sorting by topic, status, and due date, dynamic overdue detection, task editing, and soft-deletion (archiving) with unarchiving capabilities.
+
+---
+
+## Architectural Choices & Key Decisions
+
+1. Next.js App Router (Server Components & Server Actions):
+   - Server Components execute on Node.js, allowing direct SQLite queries without separate REST API setup.
+   - Server Actions handle form submissions securely on the server, eliminating client-side API boilerplate.
+   - Server cache revalidation (`revalidatePath('/')`) keeps UI data in sync instantly after mutations.
+
+2. SQLite via `better-sqlite3` (Local-First):
+   - Synchronous, file-based database stored directly in `todo.db`.
+   - Offers low latency and zero network dependencies.
+
+3. Dynamic Overdue State Derivation:
+   - Overdue status is computed dynamically at read-time by comparing `due_date` against the current date for non-completed tasks.
+   - Overdue state is intentionally excluded as a database column to prevent stale data.
+
+4. Soft-Deletion (Archiving):
+   - Tasks are never hard-deleted from SQLite. Archiving sets `is_archived = 1`, preserving historical records while enabling restoration.
+
+---
+
+## System Architecture UML Diagram
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User
+    participant ClientComp as React Client Component
+    participant ServerAct as Server Action (actions.ts)
+    participant DataLayer as Data Access Layer (tasks.ts)
+    participant SQLite as SQLite DB (todo.db)
+    participant Page as Server Page (page.tsx)
+
+    User->>ClientComp: Submit Task / Action Trigger
+    ClientComp->>ServerAct: Invoke Server Action (formData)
+    ServerAct->>ServerAct: Validate Inputs & Guard Fields
+    ServerAct->>DataLayer: Call CRUD Function
+    DataLayer->>SQLite: Prepared Statement Execution (db.prepare)
+    SQLite-->>DataLayer: Operation Result
+    ServerAct->>ServerAct: revalidatePath('/')
+    ServerAct-->>ClientComp: Action Complete
+    ServerAct->>Page: Re-render Server Component
+    Page->>DataLayer: getTasks()
+    DataLayer->>SQLite: SELECT * FROM tasks WHERE is_archived = 0
+    SQLite-->>Page: Active Task Records
+    Page-->>User: Stream Updated UI HTML
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Third-Party Packages & Justifications
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Package Name | Type | Justification |
+| :--- | :--- | :--- |
+| `better-sqlite3` | Production | High-performance synchronous C-based SQLite driver for Node.js. |
+| `@types/better-sqlite3` | Development | TypeScript type definitions for SQLite query compilation. |
+| `next` | Production | Full-stack React framework providing App Router and Server Actions. |
+| `react` / `react-dom` | Production | UI rendering engine for component tree management. |
+| `tailwindcss` | Development | Utility styling engine for global baseline styles. |
+| `typescript` | Development | Static type checking across server and client boundaries. |
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Requirements & Running Instructions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Requirements
+- Node.js version 18.x or higher
+- npm package manager
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Installation
+```bash
+npm install
+```
 
-## Deploy on Vercel
+### Running the Application
+```bash
+npm run dev
+```
+Note: Next.js defaults to port 3000. If port 3000 is occupied, Next.js automatically selects the next available port (e.g. 3001), or you can specify a custom port using `npm run dev -- -p <PORT_NUMBER>`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## AI Usage Declaration
+
+AI assistance was utilized during this project for architectural explanations, troubleshooting SQLite schema initialization, and reviewing TSX component patterns. All code additions were executed under guided pair-programming workflows.
+
+Full session records and transcripts are declared in [docs/AI_TRANSPARENCY.md](docs/AI_TRANSPARENCY.md).
+
+---
+
+## Documentation Directory Index
+
+All technical documentation modules are located inside the `docs/` folder:
+
+- [Database Design Documentation](docs/DATABASE_DESIGN.md) - SQLite schema, column specifications, and design rationale.
+- [Entity Relationships Documentation](docs/RELATIONSHIPS.md) - Class diagram, state transitions, and dynamic overdue rules.
+- [AI Transparency Declaration](docs/AI_TRANSPARENCY.md) - AI usage breakdown, session transcripts, and prompt logs.
