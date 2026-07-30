@@ -2,8 +2,8 @@
 .cardContainer {
   padding: 1.25rem;
   border-radius: 0.75rem;
-  border: 1px solid #e4e4e7;
-  background-color: #ffffff;
+  border: 1px solid #c6c6cc;
+  background-color: #e6e1e1;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease-in-out;
 }
@@ -12,12 +12,7 @@
   opacity: 0.5;
 }
 
-@media (prefers-color-scheme: dark) {
-  .cardContainer {
-    background-color: #18181b;
-    border-color: #27272a;
-  }
-}
+
 
 /* Header Section */
 .header {
@@ -30,15 +25,11 @@
 .title {
   font-weight: 600;
   font-size: 1.125rem;
-  color: #18181b;
+  color: #0303e0;
   margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  .title {
-    color: #f4f4f5;
-  }
-}
+
 
 /* Status Badges */
 .badge {
@@ -50,33 +41,20 @@
 
 .statusComplete {
   background-color: #d1fae5;
-  color: #065f46;
+  color: #02c28c;
 }
 
 .statusInProgress {
   background-color: #fef3c7;
-  color: #92400e;
+  color: #884216;
 }
 
 .statusTodo {
-  background-color: #dbeafe;
-  color: #1e40af;
+  background-color: #fcfdff;
+  color: #4570ff;
 }
 
-@media (prefers-color-scheme: dark) {
-  .statusComplete {
-    background-color: #022c22;
-    color: #6ee7b7;
-  }
-  .statusInProgress {
-    background-color: #451a03;
-    color: #fcd34d;
-  }
-  .statusTodo {
-    background-color: #172554;
-    color: #93c5fd;
-  }
-}
+
 
 /* Description */
 .description {
@@ -89,11 +67,6 @@
   overflow: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  .description {
-    color: #a1a1aa;
-  }
-}
 
 /* Footer Section */
 .footer {
@@ -109,12 +82,7 @@
   padding-top: 0.75rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  .footer {
-    border-color: #27272a;
-    color: #a1a1aa;
-  }
-}
+
 
 .metaGroup {
   display: flex;
@@ -130,33 +98,28 @@
   color: #3f3f46;
 }
 
-@media (prefers-color-scheme: dark) {
-  .topicTag {
-    background-color: #27272a;
-    color: #d4d4d8;
-  }
-}
-
 /* Overdue Badge */
 .overdueBadge {
   background-color: #fee2e2;
   color: #b91c1c;
   padding: 0.125rem 0.5rem;
-  border-radius: 0.25rem;
+  border-radius: 15px;
   font-weight: 600;
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  .overdueBadge {
-    background-color: #450a0a;
-    color: #fca5a5;
-  }
-}
+
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .5; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .5;
+  }
 }
 
 /* Actions Section */
@@ -187,7 +150,7 @@
   padding: 0.375rem 0.75rem;
   border-radius: 0.25rem;
   background-color: #fef2f2;
-  color: #dc2626;
+  color: #96a2e4;
   font-weight: 500;
   border: none;
   cursor: pointer;
@@ -195,27 +158,10 @@
 }
 
 .btnArchive:hover {
-  background-color: #fee2e2;
+  background-color: #f18484;
 }
 
 .btnArchive:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-}
-
-@media (prefers-color-scheme: dark) {
-  .btnEdit {
-    background-color: #27272a;
-    color: #e4e4e7;
-  }
-  .btnEdit:hover {
-    background-color: #3f3f46;
-  }
-  .btnArchive {
-    background-color: rgba(69, 10, 10, 0.5);
-    color: #f87171;
-  }
-  .btnArchive:hover {
-    background-color: rgba(127, 29, 29, 0.5);
-  }
 }
