@@ -10,11 +10,12 @@ In compliance with COMS3011A lab evaluation guidelines, AI assistance was utiliz
 3. Troubleshooting & Debugging: Identifying schema mismatch errors (`table tasks has no column named description`) and providing database migration reset steps.
 4. User-Authored Code: All source code modifications were driven interactively and reviewed by the author for complete hands-on learning.
 
-## Conversation Log Transcripts
+## Conversation Log Transcripts in Repository
 
-All raw conversation step logs and prompt histories are preserved locally in the system environment log directory:
-- Path: `C:\Users\mahla\.gemini\antigravity-ide\brain\1c0b1ab9-bf0e-425f-a67e-38d23d353de7\.system_generated\logs\transcript.jsonl`
-- Full Transcript: `C:\Users\mahla\.gemini\antigravity-ide\brain\1c0b1ab9-bf0e-425f-a67e-38d23d353de7\.system_generated\logs\transcript_full.jsonl`
+The raw session transcripts and interaction logs are included directly in this repository for evaluation access:
+
+- [Compact Session Transcript (JSONL)](transcripts/transcript.jsonl)
+- [Full Session Transcript (JSONL)](transcripts/transcript_full.jsonl)
 
 ## Summary of AI Interactions
 - Query 1: Diagnosed `SqliteError: table tasks has no column named description` and provided schema update steps.
@@ -24,3 +25,4 @@ All raw conversation step logs and prompt histories are preserved locally in the
 - Query 5: Refactored page inline styles into scoped CSS Modules (`page.module.css`).
 - Query 6: Harmonized UI design system with light page background, royal blue typography, and dark component cards.
 - Query 7: Built Archived Tasks popup dialog with unarchiving / restoring capabilities.
+- Query 8: Added AI session transcripts directly into `docs/transcripts/` directory.

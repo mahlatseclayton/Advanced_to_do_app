@@ -10,6 +10,96 @@ This project provides a task management interface designed for desktop usage. It
 
 ---
 
+## Step-by-Step Guide for Tutors and Evaluation Marking
+
+Follow this explicit step-by-step guide to set up, reproduce, test, and run the project from scratch.
+
+### Step 1: Verify Environment Prerequisites
+Before running any commands, verify that Node.js (version 18 or higher) and npm are installed on your machine:
+
+```bash
+node -v
+```
+Expected output: `v18.x.x` or higher (e.g. `v20.x.x` or `v24.x.x`).
+
+```bash
+npm -v
+```
+Expected output: `9.x.x` or higher.
+
+### Step 2: Clone and Navigate to the Repository
+Open a terminal and clone the repository, then enter the project folder:
+
+```bash
+git clone https://github.com/mahlatseclayton/SDP_Lab_1_To-do-app.git
+cd SDP_Lab_1_To-do-app
+```
+
+### Step 3: Install Dependencies
+Install all required production and development dependencies specified in `package.json`:
+
+```bash
+npm install
+```
+
+If you are setting up the project manually from a clean environment without `package-lock.json`, you can install the specific packages using the individual commands below:
+
+```bash
+# Install core database engine
+npm install better-sqlite3
+
+# Install development types and tooling
+npm install -D @types/better-sqlite3 @types/node @types/react @types/react-dom typescript eslint tailwindcss
+```
+
+### Step 4: Database Initialization
+No manual database setup or SQL server configuration is required. 
+- The application uses an embedded SQLite database stored locally in `todo.db`.
+- When the application starts, `src/lib/db.ts` automatically initializes the `todo.db` database file and creates the required `tasks` table schema if it does not already exist.
+
+### Step 5: Run Automated Unit Tests
+To execute the automated unit test suite running against a throwaway in-memory SQLite database (`:memory:`), run the single test command below:
+
+```bash
+npm test
+```
+
+Expected output:
+```text
+✔ 1. Task Creation and Retrieval on throwaway in-memory SQLite database
+✔ 2. Dynamic Overdue Calculation Rule (read-time comparison)
+✔ 3. Task Archiving (Soft-deletion) and Unarchiving Verification
+ℹ pass 3
+ℹ fail 0
+```
+
+### Step 6: Start the Development Server
+Launch the Next.js local development server:
+
+```bash
+npm run dev
+```
+
+Expected terminal output:
+```text
+▲ Next.js 16.2.12 (Turbopack)
+- Local: http://localhost:3000
+```
+
+### Step 7: Open the Application in Your Browser
+Open your web browser and navigate to:
+```text
+http://localhost:3000
+```
+
+Note on Port Fallbacks:
+If port 3000 is already in use on your machine, Next.js will automatically select the next available port (e.g. `http://localhost:3001`). You can also specify a custom port explicitly using:
+```bash
+npm run dev -- -p 8080
+```
+
+---
+
 ## Architectural Choices & Key Decisions
 
 1. Next.js App Router (Server Components & Server Actions):
@@ -72,30 +162,14 @@ sequenceDiagram
 
 ---
 
-## Environment Requirements & Running Instructions
-
-### Requirements
-- Node.js version 18.x or higher
-- npm package manager
-
-### Installation
-```bash
-npm install
-```
-
-### Running the Application
-```bash
-npm run dev
-```
-Note: Next.js defaults to port 3000. If port 3000 is occupied, Next.js automatically selects the next available port (e.g. 3001), or you can specify a custom port using `npm run dev -- -p <PORT_NUMBER>`.
-
----
-
 ## AI Usage Declaration
 
 AI assistance was utilized during this project for architectural explanations, troubleshooting SQLite schema initialization, and reviewing TSX component patterns. All code additions were executed under guided pair-programming workflows.
 
-Full session records and transcripts are declared in [docs/AI_TRANSPARENCY.md](docs/AI_TRANSPARENCY.md).
+Session records and JSONL log files are committed directly in the repository:
+- [AI Transparency Declaration](docs/AI_TRANSPARENCY.md)
+- [Compact Session Log (JSONL)](docs/transcripts/transcript.jsonl)
+- [Full Session Log (JSONL)](docs/transcripts/transcript_full.jsonl)
 
 ---
 
