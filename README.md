@@ -168,8 +168,8 @@ AI assistance was utilized during this project for architectural explanations, t
 
 Session records and JSONL log files are committed directly in the repository:
 - [AI Transparency Declaration](docs/AI_TRANSPARENCY.md)
-- [Compact Session Log (JSONL)](docs/transcripts/transcript.jsonl)
-- [Full Session Log (JSONL)](docs/transcripts/transcript_full.jsonl)
+- [Compact Session Log (JSONL)](ai/transcript.jsonl)
+- [Full Session Log (JSONL)](ai/transcript_full.jsonl)
 
 ---
 

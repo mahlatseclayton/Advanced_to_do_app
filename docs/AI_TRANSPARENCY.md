@@ -14,8 +14,8 @@ In compliance with COMS3011A lab evaluation guidelines, AI assistance was utiliz
 
 The raw session transcripts and interaction logs are included directly in this repository for evaluation access:
 
-- [Compact Session Transcript (JSONL)](transcripts/transcript.jsonl)
-- [Full Session Transcript (JSONL)](transcripts/transcript_full.jsonl)
+- [Compact Session Transcript (JSONL)](../ai/transcript.jsonl)
+- [Full Session Transcript (JSONL)](../ai/transcript_full.jsonl)
 
 ## Summary of AI Interactions
 - Query 1: Diagnosed `SqliteError: table tasks has no column named description` and provided schema update steps.
